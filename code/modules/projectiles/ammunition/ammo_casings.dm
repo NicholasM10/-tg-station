@@ -188,6 +188,13 @@
 	projectile_type = /obj/item/projectile/bullet/weakbullet
 	materials = list(MAT_METAL=250)
 
+/obj/item/ammo_casing/shotgun/musketball
+	name = "musket ball"
+	desc = "A piece of metal used for firing in muskets."
+	icon_state = "mball"
+	projectile_type = /obj/item/projectile/bullet/heavybullet
+	materials = list(MAT_METAL=250)
+
 
 /obj/item/ammo_casing/shotgun/improvised
 	name = "improvised shell"

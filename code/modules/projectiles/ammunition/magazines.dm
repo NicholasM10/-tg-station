@@ -95,6 +95,11 @@
 	else
 		return ..()
 
+//Musket breech (internal mags)
+/obj/item/ammo_box/magazine/internal/shot/musket
+	name = "musket internal magazine"
+	ammo_type = /obj/item/ammo_casing/shotgun/musketball
+	max_ammo = 1
 
 /obj/item/ammo_box/magazine/internal/shot/tube
 	name = "dual feed shotgun internal tube"

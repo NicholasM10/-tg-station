@@ -208,5 +208,48 @@
 		return
 	pump()
 
+//Musket
+
+/obj/item/weapon/gun/projectile/shotgun/musket //Not actually a shotgun
+	name = "musket"
+	desc = "Its piece of wood and a metallic barrel that fires chunks of lead. How do I even shoot it? Surely needs black powder and a rod."
+	icon_state = "musket"
+	item_state = "musket"
+	force = 15
+	origin_tech = "combat=2;materials=2"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/musket
+	var/hammer_pulled = 0 //if hammer is pulled = 1
+	var/powder_loaded = 0
+
+/obj/item/weapon/gun/projectile/shotgun/musket/attack_self(mob/living/user)
+	if(!hammer_pulled)
+		if(recentpump)
+			return
+		hammer_pulled = TRUE
+		chambered = 1
+		playsound(src.loc, 'sound/weapons/shotgunpump.ogg', 30, 1)
+		user << "You pull hammer backwards to full-cock position."
+		recentpump = 1
+		spawn(12)
+			recentpump = 0
+	else
+		if(recentpump)
+			return
+		hammer_pulled = FALSE
+		chambered = null
+		playsound(src.loc, 'sound/weapons/shotgunpump.ogg', 30, 1)
+		user << "You pull hammer front to half-cock position."
+		recentpump = 1
+		spawn(12)
+			recentpump = 0
+
+/obj/item/weapon/gun/projectile/shotgun/musket/attacked_by(/datum/reagent/blackpowder) //loading black powder
+	if(hammer_pulled)
+		return //here
+
+
+
+
+
 
 // DOUBLE BARRELED SHOTGUN and IMPROVISED SHOTGUN are in revolver.dm
