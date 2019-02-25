@@ -15,8 +15,8 @@
 	return
 
 /client/verb/forum()
-	set name = "forum"
-	set desc = "Visit the forum."
+	set name = "Discord"
+	set desc = "Visit the SpessVR Discord."
 	set hidden = 1
 	var/forumurl = CONFIG_GET(string/forumurl)
 	if(forumurl)

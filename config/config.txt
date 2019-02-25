@@ -220,8 +220,8 @@ CHECK_RANDOMIZER
 ## Don't set this to the same server, BYOND will automatically restart players to the server when it has restarted.
 # SERVER ss13.example.com:2506
 
-## forum address
-# FORUMURL http://tgstation13.org/phpBB/index.php
+## forum address (DISCORD)
+FORUMURL https://discord.gg/9s6QdEy
 
 ## Wiki address
 # WIKIURL http://www.tgstation13.org/wiki
